@@ -20,4 +20,18 @@ feature 'User submits contact inquiry' do
       expect(page).to have_content('Contact was successfully created!')
     end
   end
+
+
+  context 'sad path' do
+    it 'creates contact form without first name' do
+      visit '/contacts/new'
+      fill_in 'Email', with: 'test@test.com'
+      fill_in 'Subject', with: 'Example'
+      fill_in 'Description', with: 'Some text here.'
+      fill_in 'Last name', with: 'Doe'
+
+      click_on 'Save Contact'
+      expect(page).to have_content('First name can\'t be blank!')
+    end
+  end
 end
