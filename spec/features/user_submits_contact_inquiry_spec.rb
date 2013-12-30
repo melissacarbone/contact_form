@@ -10,14 +10,14 @@ feature 'User submits contact inquiry' do
   context 'happy path' do
     it 'creates contact form submission' do
       visit '/contacts/new'
-      fill_in 'email', with: 'test@test.com'
-      fill_in 'subject', with: 'Example'
-      fill_in 'description', with: 'Some text here.'
-      fill_in 'first_name', with: 'Jane'
-      fill_in 'last_name', with: 'Doe'
+      fill_in 'Email', with: 'test@test.com'
+      fill_in 'Subject', with: 'Example'
+      fill_in 'Description', with: 'Some text here.'
+      fill_in 'First name', with: 'Jane'
+      fill_in 'Last name', with: 'Doe'
 
-      click_on 'Submit Inquiry'
-      expect(page).to have_content('Inquiry was successfully created!')
+      click_on 'Save Contact'
+      expect(page).to have_content('Contact was successfully created!')
     end
   end
 end
