@@ -3,7 +3,9 @@ FactoryGirl.define do
     first_name 'John'
     last_name 'Doe'
     subject 'Something'
-    email 'test@test.com'
+    sequence :email do |n|
+      "john#{n}@example.com"
+    end
     description 'this is a description'
   end
 end

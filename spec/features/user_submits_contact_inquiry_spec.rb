@@ -34,4 +34,16 @@ feature 'User submits contact inquiry' do
       expect(page).to have_content('First name can\'t be blank')
     end
   end
+
+  context 'using factory girl for index display verification' do
+    it 'displays created records on index page' do
+      contacts = FactoryGirl.create_list(:contact, 5)
+      visit '/contacts'
+      expect(page).to have_content('john3@example.com')
+
+    end
+
+  end
+
+
 end

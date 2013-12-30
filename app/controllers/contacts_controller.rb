@@ -30,7 +30,7 @@ class ContactsController<ApplicationController
     @contact = Contact.new(contact_params)
 
     if @contact.save
-      redirect_to(contact_path, notice: 'Contact was successfully created!')
+      redirect_to(@contact, notice: 'Contact was successfully created!')
     else
       render 'new'
     end
