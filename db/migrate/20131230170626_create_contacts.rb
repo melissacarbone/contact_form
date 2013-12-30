@@ -3,10 +3,9 @@ class CreateContacts < ActiveRecord::Migration
     create_table :contacts do |t|
       t.string :email, null: false
       t.string :subject, null: false
-      t.text :description
-      t.string :first_name
-      t.string :last_name
+      t.text :description, null:false
+      t.string :first_name, null:false
+      t.string :last_name, null:false
     end
-    add_index :contacts, :email, :unique => true
   end
 end

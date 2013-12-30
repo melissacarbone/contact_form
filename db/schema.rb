@@ -19,11 +19,9 @@ ActiveRecord::Schema.define(version: 20131230170626) do
   create_table "contacts", force: true do |t|
     t.string "email",       null: false
     t.string "subject",     null: false
-    t.text   "description"
-    t.string "first_name"
-    t.string "last_name"
+    t.text   "description", null: false
+    t.string "first_name",  null: false
+    t.string "last_name",   null: false
   end
-
-  add_index "contacts", ["email"], name: "index_contacts_on_email", unique: true, using: :btree
 
 end

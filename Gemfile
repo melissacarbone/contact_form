@@ -39,6 +39,8 @@ group :development, :test do
   gem 'meta_request'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'shoulda'
+  gem 'factory_girl_rails'
 end
 
 # Use ActiveModel has_secure_password

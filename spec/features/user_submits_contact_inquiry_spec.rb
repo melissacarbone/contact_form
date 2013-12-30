@@ -31,7 +31,7 @@ feature 'User submits contact inquiry' do
       fill_in 'Last name', with: 'Doe'
 
       click_on 'Save Contact'
-      expect(page).to have_content('First name can\'t be blank!')
+      expect(page).to have_content('First name can\'t be blank')
     end
   end
 end
